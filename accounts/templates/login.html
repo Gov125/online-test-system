@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Student Login</title>
+    <link rel="stylesheet"
+          href="{% static 'accounts/style.css' %}">
+</head>
+<body>
+
+<div class="auth-container">
+
+    <div class="logo">
+        Online Exam
+    </div>
+
+    <p class="subtitle">
+        Student Login Portal
+    </p>
+
+    {% if error %}
+    <p class="error">
+        {{ error }}
+    </p>
+    {% endif %}
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <input
+            type="text"
+            name="enrollment_number"
+            placeholder="Enrollment Number"
+            required
+        >
+
+        <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+        >
+
+        <button type="submit">
+            Login
+        </button>
+
+    </form>
+
+    <div class="link">
+        <a href="/signup/">
+            Create New Account
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>

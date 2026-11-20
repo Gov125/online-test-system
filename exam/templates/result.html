@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="result-card">
+
+        <h1>Exam Result</h1>
+
+        <h3>
+            {{ result.exam.title }}
+        </h3>
+
+        <div class="score">
+            {{ result.score }}/{{ result.total_questions }}
+        </div>
+
+        <h3>
+            Percentage: {{ result.percentage }}%
+        </h3>
+
+        <br>
+
+        {% if result.percentage >= 40 %}
+
+        <div class="pass">
+            PASS ✅
+        </div>
+
+        {% else %}
+
+        <div class="fail">
+            FAIL ❌
+        </div>
+
+        {% endif %}
+
+        <a href="/dashboard/" class="back-btn">
+            Back to Dashboard
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

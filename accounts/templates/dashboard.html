@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+   <link rel="stylesheet"
+          href="{% static 'accounts/style.css' %}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <h2>
+            Welcome {{ request.user.first_name }}
+        </h2>
+
+        <a href="/logout/" class="logout-btn">
+            Logout
+        </a>
+
+    </div>
+
+    <div class="exam-grid">
+
+        {% for exam in exams %}
+
+        <div class="exam-card">
+
+            <h3>
+                {{ exam.title }}
+            </h3>
+
+            <a href="/test/{{ exam.id }}/"
+               class="exam-btn">
+               Start Exam
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+</body>
+</html>

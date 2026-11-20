@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+
+    <link rel="stylesheet"
+          href="{% static 'accounts/style.css' %}">
+</head>
+<body>
+
+<div class="auth-container">
+
+    <div class="logo">
+        Online Exam
+    </div>
+
+    <p class="subtitle">
+        Student Registration
+    </p>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <input type="text" name="first_name" placeholder="First Name" required>
+
+        <input type="text" name="last_name" placeholder="Last Name" required>
+
+        <input type="email" name="email" placeholder="Email Address" required>
+
+        <input type="text" name="phone" placeholder="Phone Number" required>
+
+        <input type="text" name="enrollment_number" placeholder="Enrollment Number" required>
+
+        <input type="password" name="password" placeholder="Password" required>
+
+        <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+
+        <button type="submit">
+            Register
+        </button>
+
+    </form>
+
+    <div class="link">
+        <a href="/login/">
+            Already Have Account?
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>
