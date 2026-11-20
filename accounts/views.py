@@ -137,22 +137,11 @@ def login_view(request):
 
     return render(request, 'login.html')
 
-
-# =========================
-# LOGOUT VIEW
-# =========================
-
 def logout_view(request):
 
     logout(request)
 
     return redirect('login')
-
-
-# =========================
-# DASHBOARD VIEW
-# =========================
-
 @login_required
 def dashboard(request):
 
