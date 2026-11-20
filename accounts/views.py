@@ -9,10 +9,6 @@ from .models import Student
 from exam.models import Exam
 
 
-# =========================
-# SIGNUP VIEW
-# =========================
-
 def signup_view(request):
 
     if request.method == "POST":
@@ -101,10 +97,6 @@ def signup_view(request):
     # GET Request
     return render(request, 'signup.html')
 
-
-# =========================
-# LOGIN VIEW
-# =========================
 
 def login_view(request):
 
