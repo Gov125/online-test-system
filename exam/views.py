@@ -29,7 +29,7 @@ def start_exam(request, exam_id):
 
         return render(
             request,
-            'already_attempted.html'
+            'already_attempt.html'
         )
 
     questions = Question.objects.filter(
